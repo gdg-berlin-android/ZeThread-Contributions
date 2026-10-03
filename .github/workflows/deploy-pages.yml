@@ -1,0 +1,83 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  grid_conflicts:
+    name: Check grid coordinate conflicts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Check for conflicting grid positions
+        run: npm run validate:conflicts
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Validate contribution coordinates (maximum 30 × 30)
+        run: npm run validate:coordinates
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache optimized images
+        uses: actions/cache@v6
+        with:
+          path: _site/images
+          key: ${{ runner.os }}-eleventy-images-${{ hashFiles('package-lock.json', '.eleventy.js') }}-${{ hashFiles('patches/**/*') }}
+          restore-keys: |
+            ${{ runner.os }}-eleventy-images-${{ hashFiles('package-lock.json', '.eleventy.js') }}-
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: npm run build -- --pathprefix "$PAGES_BASE_PATH/"
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,47 @@
+---
+permalink: /statistics/index.html
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statistics — ZeThread @ next.app devCon</title>
+    <link rel="stylesheet" href="{{ '/assets/wall.css' | url }}">
+  </head>
+  <body class="statistics-page">
+    {% include "header.njk" %}
+    <main class="statistics">
+      {% set ranking = wall.patches | contributorRanking %}
+      <table class="leaderboard">
+        <caption>Top contributors</caption>
+        <colgroup>
+          <col class="leaderboard__rank">
+          <col>
+          <col class="leaderboard__count">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Contributor</th>
+            <th scope="col">Patches</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for contributor in ranking %}
+          {% set profile = contributor.handle | githubProfile %}
+          <tr>
+            <td>{{ contributor.rank }}</td>
+            <th scope="row">
+              {{ (contributor.name or contributor.handle or 'Anonymous contributor') | escape }}{% if profile %} (<a href="{{ profile | escape }}">@{{ contributor.handle | escape }}</a>){% endif %}
+            </th>
+            <td>{{ contributor.count }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="3">No contributions yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

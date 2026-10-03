@@ -1,0 +1,19 @@
+{
+  "name": "zethread-tapestry-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static virtual tapestry wall for ZeThread contributions.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "validate:coordinates": "node scripts/validate-contributions.js coordinates",
+    "validate:conflicts": "node scripts/validate-contributions.js conflicts"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^7.0.0"
+  }
+}

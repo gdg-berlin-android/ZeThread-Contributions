@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZeThread @ next.app devCon</title>
+    <link rel="stylesheet" href="{{ '/assets/wall.css' | url }}">
+    <script src="{{ '/assets/details.js' | url }}" defer></script>
+  </head>
+  <body>
+    {% include "header.njk" %}
+    <main class="wall-page">
+      <div class="wall-frame" style="--columns: {{ wall.columns }}; --rows: {{ wall.rows }};">
+        <div class="wall-coordinates wall-coordinates--x" aria-hidden="true">
+          {% for x in range(0, wall.columns) %}
+          <span>{{ x }}</span>
+          {% endfor %}
+        </div>
+        <div class="wall-coordinates wall-coordinates--y" aria-hidden="true">
+          {% for y in range(0, wall.rows) %}
+          <span>{{ y }}</span>
+          {% endfor %}
+        </div>
+      <ul class="wall" aria-label="Contribution wall">
+        {% for cell in wall.cells %}
+        <li class="wall__patch"
+            style="grid-column: {{ cell.coordinates.x + 1 }}; grid-row: {{ cell.coordinates.y + 1 }};">
+          {% if cell.conflict %}
+          <button class="wall__button wall__button--conflict" type="button" aria-haspopup="dialog"
+                  aria-controls="patch-details"
+                  aria-label="Conflicts at ({{ cell.coordinates.x }}, {{ cell.coordinates.y }}). View contribution folders."
+                  data-conflict-template="conflict-{{ cell.coordinates.x }}-{{ cell.coordinates.y }}">
+            {% include "conflict-icon.njk" %}
+            <span class="conflict-message">This cell has conflicts that must be resolved</span>
+            <span class="conflict-action">View conflicts</span>
+          </button>
+          <template id="conflict-{{ cell.coordinates.x }}-{{ cell.coordinates.y }}">
+            <ul class="conflict-folders">
+              {% for folder in cell.folders %}
+              <li>
+                <a href="{{ folder.url | escape }}" target="_blank" rel="noopener">
+                  <svg class="conflict-folder-icon" width="16" height="16" viewBox="0 0 16 16"
+                       fill="none" stroke="currentColor" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 3h5l2 2h5v9H2Z" />
+                  </svg>
+                  <span class="conflict-folder-name">patches/{{ folder.name | escape }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </template>
+          {% else %}
+          {% set patch = cell.patch %}
+          {% set contributor = patch.author.name or patch.author.handle or 'Anonymous contributor' %}
+          <button class="wall__button" type="button" aria-haspopup="dialog"
+                  aria-controls="patch-details"
+                  aria-label="Details for {{ contributor | escape }}'s patch at ({{ patch.coordinates.x }}, {{ patch.coordinates.y }})"
+                  data-contributor="{{ contributor | escape }}"
+                  data-timestamp="{{ patch.timestamp | default('') | escape }}"
+                  data-github-handle="{{ patch.author.handle | default('') | trim | escape }}"
+                  data-github-url="{{ patch.author.handle | githubProfile | escape }}">
+            {% patchImage patch.image, patch.alt %}
+          </button>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      </div>
+      <p class="wall-footer">
+        <a href="{{ '/statistics/' | url }}" target="_blank" rel="noopener">Statistics</a>
+      </p>
+    </main>
+    <dialog class="details" id="patch-details" aria-labelledby="details-title">
+      <form method="dialog" class="details__close">
+        <button autofocus>Close</button>
+      </form>
+      <div class="details-heading">
+        <span id="details-conflict-icon" hidden>{% include "conflict-icon.njk" %}</span>
+        <h2 id="details-title">Patch details</h2>
+      </div>
+      <dl id="details-metadata">
+        <dt>Contributed by</dt>
+        <dd>
+          <span id="details-contributor"></span><span id="details-profile-wrapper" hidden> (<a id="details-profile"></a>)</span>
+        </dd>
+        <dt>Contributed on</dt>
+        <dd><time id="details-timestamp"></time></dd>
+      </dl>
+      <section id="details-conflicts" hidden>
+        <h3 class="conflict-heading">Conflicting folders</h3>
+        <div id="details-conflict-links"></div>
+      </section>
+    </dialog>
+  </body>
+</html>
