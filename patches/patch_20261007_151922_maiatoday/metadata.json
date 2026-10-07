@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_151922_maiatoday",
+    "author": {
+        "handle": "maiatoday",
+        "name": "maiatoday",
+        "email": "maiatoday@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 1,
+        "y": 3
+    },
+    "timestamp": "2026-10-07T13:19:24Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "dcdb1997a45bb65917d56f6816fc340f6dd8fe6f"
+}
