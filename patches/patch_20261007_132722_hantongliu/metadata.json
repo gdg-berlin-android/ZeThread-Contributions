@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_132722_hantongliu",
+    "author": {
+        "handle": "hantongliu",
+        "name": "Hantong Liu",
+        "email": "hantongliu@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 5,
+        "y": 1
+    },
+    "timestamp": "2026-10-07T11:27:25Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "0ccf77cd542c5214e0cd86ddc3dc1e16eb863c64"
+}
