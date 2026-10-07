@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_170552_atmeta",
+    "author": {
+        "handle": "atmeta",
+        "name": "Sofie Meta",
+        "email": "atmeta@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 3,
+        "y": 3
+    },
+    "timestamp": "2026-10-07T15:05:55Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "7d1134cd071c3fdfad917520a759ff916efe2c2c"
+}
