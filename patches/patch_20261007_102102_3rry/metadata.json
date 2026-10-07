@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_102102_3rry",
+    "author": {
+        "handle": "3rry",
+        "name": "Erika Morice",
+        "email": "3rry@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 5,
+        "y": 0
+    },
+    "timestamp": "2026-10-07T08:21:04Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "6c9d73b43122ac3316db0ce4e0314a1fa2814a31"
+}
