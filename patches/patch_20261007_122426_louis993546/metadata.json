@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_122426_louis993546",
+    "author": {
+        "handle": "louis993546",
+        "name": "Louis Tsai",
+        "email": "louis993546@gmail.com"
+    },
+    "coordinates": {
+        "x": 6,
+        "y": 0
+    },
+    "timestamp": "2026-10-07T10:24:29Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "288b8b7c36d7aad86195d50fcde46755dbde6b63"
+}
