@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261007_131529_auspens",
+    "author": {
+        "handle": "auspens",
+        "name": "Aleksandra Uspenskaia",
+        "email": "auspens@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 2,
+        "y": 1
+    },
+    "timestamp": "2026-10-07T11:15:31Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "464ff82936d93468edb4153ba81def2958de1bdd"
+}
