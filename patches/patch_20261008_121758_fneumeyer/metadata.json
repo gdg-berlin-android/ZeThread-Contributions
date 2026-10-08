@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261008_121758_fneumeyer",
+    "author": {
+        "handle": "fneumeyer",
+        "name": "Felix Neumeyer",
+        "email": "fneumeyer@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 4,
+        "y": 3
+    },
+    "timestamp": "2026-10-08T10:18:01Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "7a983a00b10a1a30e7086ba42c42399024772e50"
+}
