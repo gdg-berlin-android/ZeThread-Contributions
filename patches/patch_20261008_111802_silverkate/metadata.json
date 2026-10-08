@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261008_111802_silverkate",
+    "author": {
+        "handle": "silverkate",
+        "name": "Kate",
+        "email": "silverkate@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 6,
+        "y": 2
+    },
+    "timestamp": "2026-10-08T09:18:05Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "cc57ed99a9e4cfdccc51aa8b264da3d8f27ae520"
+}
