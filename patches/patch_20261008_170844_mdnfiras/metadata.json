@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261008_170844_mdnfiras",
+    "author": {
+        "handle": "mdnfiras",
+        "name": "Firas Medini",
+        "email": "mdnfiras@gmail.com"
+    },
+    "coordinates": {
+        "x": 8,
+        "y": 2
+    },
+    "timestamp": "2026-10-08T15:08:51Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "4639c96bedad788d32588e855e0eee813a5e4ad1"
+}
