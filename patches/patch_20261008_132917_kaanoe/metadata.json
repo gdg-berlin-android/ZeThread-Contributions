@@ -1,0 +1,14 @@
+{
+    "id": "patch_20261008_132917_kaanoe",
+    "author": {
+        "handle": "kaanoe",
+        "email": "kaanoe@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 0,
+        "y": 6
+    },
+    "timestamp": "2026-10-08T11:29:19Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "bca844b9cff2ef55a66c99b0c4e09139eaeb2230"
+}
