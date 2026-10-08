@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261008_122455_swen639",
+    "author": {
+        "handle": "swen639",
+        "name": "Samantha W",
+        "email": "swen639@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 5,
+        "y": 5
+    },
+    "timestamp": "2026-10-08T10:24:57Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "57152a7f8a05bc9dd8c517865003ff3a9fd9878e"
+}
