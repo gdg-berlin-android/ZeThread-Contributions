@@ -1,0 +1,14 @@
+{
+    "id": "patch_20261009_134314_DancingTREX",
+    "author": {
+        "handle": "DancingTREX",
+        "email": "dancingtrex@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 10,
+        "y": 3
+    },
+    "timestamp": "2026-10-09T11:43:20Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "280b6463d8b348645a273581d47310c7efc8829a"
+}
