@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261009_110338_robinjaro",
+    "author": {
+        "handle": "robinjaro",
+        "name": "Robin Jaroschek",
+        "email": "robinjaro@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 9,
+        "y": 2
+    },
+    "timestamp": "2026-10-09T09:03:41Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "3766be6303aa0bb400f5e4aa2f30f3e1a6ebecdc"
+}
