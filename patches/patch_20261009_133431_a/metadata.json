@@ -1,0 +1,14 @@
+{
+    "id": "patch_20261009_133431_a",
+    "author": {
+        "handle": "a",
+        "email": "a@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 0,
+        "y": 0
+    },
+    "timestamp": "2026-10-09T11:34:34Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "6db798ffc1eb02fb8fd3d1bd6c2ea770396b4745"
+}
