@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261009_124132_beamb",
+    "author": {
+        "handle": "beamb",
+        "name": "Beatrice AdMV",
+        "email": "beamb@users.noreply.github.com"
+    },
+    "coordinates": {
+        "x": 10,
+        "y": 1
+    },
+    "timestamp": "2026-10-09T10:41:41Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "a820a959bfc5be9ad572a4680b7665ad53d500dc"
+}
