@@ -1,0 +1,14 @@
+{
+    "id": "patch_20261009_122424_andrzej",
+    "author": {
+        "handle": "andrzej",
+        "email": "andrzej.weclewski@gmail.com"
+    },
+    "coordinates": {
+        "x": 10,
+        "y": 2
+    },
+    "timestamp": "2026-10-09T10:24:26Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "d26debf43ea17d31c9e60c9635175f306abbeae2"
+}
