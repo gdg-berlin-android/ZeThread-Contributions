@@ -1,0 +1,15 @@
+{
+    "id": "patch_20261009_134517_noreply",
+    "author": {
+        "handle": "noreply",
+        "name": "noreply",
+        "email": "geekerdidiwei@foxmail.com"
+    },
+    "coordinates": {
+        "x": 10,
+        "y": 4
+    },
+    "timestamp": "2026-10-09T11:45:23Z",
+    "image": "patch.jpg",
+    "image_commit_sha": "122ac21aedc0cb463c9837758391038ed3b658ea"
+}
